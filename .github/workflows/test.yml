@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Kubectl
-        run: kubectl version
+        run: echo $(kubectl version)
         
       - name: AWS
-        run: aws --version
+        run: echo $(aws --version)

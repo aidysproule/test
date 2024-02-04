@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Kubectl
-        run: echo $(kubectl version)
-        
-      - name: AWS
-        run: echo $(aws --version)
+      - name: SCP
+        run: echo $(which SCP)
+

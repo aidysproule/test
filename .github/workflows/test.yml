@@ -26,4 +26,4 @@ jobs:
           path: code
       - name: Copy files
         run: |
-          scp -i key.pem -r /code ec2-user@3.82.194.184:/usr/share/nginx/html
+          scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i key.pem -r /code ec2-user@3.82.194.184:/usr/share/nginx/html

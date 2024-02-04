@@ -10,5 +10,8 @@ jobs:
 
     steps:
       - name: SCP
-        run: echo $(which SCP)
+        run: |
+          sudo apt-get update
+          sudo apt-get install openssh-client
+          echo $(which scp)
 

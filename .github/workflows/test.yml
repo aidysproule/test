@@ -1,4 +1,4 @@
-name: Build and Deploy Frontend to DockerHub
+name: Install SCP
 
 on:
   workflow_dispatch:

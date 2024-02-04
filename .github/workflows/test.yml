@@ -6,12 +6,24 @@ on:
 
 jobs:
   build:
+    env: # Get the environment secret for the build
+      SSH_KEY: ${{ secrets.SSH_KEY }}
     runs-on: ubuntu-latest
 
     steps:
-      - name: SCP
+      - name: Install SCP
         run: |
           sudo apt-get update
           sudo apt-get install openssh-client
           echo $(which scp)
-
+      - name: SSH_KEY
+        run: |
+          echo "${{env.SSH_KEY}}" > key.pem
+          chmod 600 key.pem
+      - name: Checkout Code # Check out teh code
+        uses: actions/checkout@v4
+        with:
+          path: code
+      - name: Copy files
+        run: |
+          scp -i key.pem -r /code ec2-user@3.82.194.184:/usr/share/nginx/html

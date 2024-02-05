@@ -15,4 +15,5 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: code
-      
+      - name: Copy code to folder
+        run: cp -r ./code/. /usr/share/nginx/html/

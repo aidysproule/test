@@ -16,4 +16,4 @@ jobs:
         with:
           path: code
       - name: Copy code to folder
-        run: cp -r ./code/. /usr/share/nginx/html/
+        run: sudo cp -r ./code/. /usr/share/nginx/html/

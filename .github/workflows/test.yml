@@ -8,7 +8,8 @@ jobs:
   build:
     env: # Get the environment secret for the build
       SSH_KEY: ${{ secrets.SSH_KEY }}
-    runs-on: self-hosted
+    runs-on:
+      labels: self-hosted
     strategy:
       matrix:
         runner: [ ip-172-31-26-193 , ip-172-31-22-202 ] # Replace with your runner names

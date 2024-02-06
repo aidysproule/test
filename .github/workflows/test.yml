@@ -10,9 +10,7 @@ jobs:
       SSH_KEY: ${{ secrets.SSH_KEY }}
     runs-on:
       labels: self-hosted
-    strategy:
-      matrix:
-        runner: [ ip-172-31-26-193 , ip-172-31-22-202 ] # Replace with your runner names
+
 
     steps:
       - name: Checkout Code # Check out teh code

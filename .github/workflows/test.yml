@@ -10,6 +10,9 @@ jobs:
       SSH_KEY: ${{ secrets.SSH_KEY }}
     runs-on:
       labels: self-hosted
+    strategy:
+      matrix:
+        runner: [ self-hosted ] # Replace with your runner names
 
 
     steps:
